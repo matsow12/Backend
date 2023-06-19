@@ -1,7 +1,7 @@
 def imageName="matsow12"
 def dockerRegistry="backend"
 def registryCredentials="docker_hub"
-def dockerTag=""
+def dockerTag="0.0.1"
 pipeline {
     agent {
         label 'agent'

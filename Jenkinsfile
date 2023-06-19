@@ -1,6 +1,6 @@
-def imageName="192.168.44.44:8082/docker_registry/backend"
-def dockerRegistry="https://192.168.44.44:8082"
-def registryCredentials="artifactory"
+def imageName="matsow12"
+def dockerRegistry="backend"
+def registryCredentials="docker_hub"
 def dockerTag=""
 pipeline {
     agent {
@@ -66,7 +66,7 @@ pipeline {
                         sh """ cd backend
                         git config --global user.email "mateuszsowinski@wp.pl"
                         git config --global user.name "matsow12"
-                        sed -i "s#$imageName.*#$imageName:$dockerTag#g" deployment.yaml
+                        sed -i "s#$imageName.*#$imageName:$dockerTag#g" backend.yaml
                         git commit -am "Set new $dockerTag tag."
                         git diff
                         git push origin main

@@ -48,7 +48,7 @@ pipeline {
                 }
             }
         }
-       /* stage('Pushing image to Artifactory'){
+        stage('Pushing image to Artifactory'){
             steps{
                 script{
                     docker.withRegistry("$dockerRegistry","$registryCredentials"){
@@ -57,7 +57,7 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
         stage ('Push to repo') {
             steps {
                 dir('ArgoCD') {
